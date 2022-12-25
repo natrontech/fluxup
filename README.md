@@ -1,5 +1,5 @@
 # fluxup
-A general purpose project template for golang CLI applications
+A CLI tool for rendering instances of your Application deployment structure for FluxCD.
 
 <!--ts-->
    * [fluxup](#fluxup)
@@ -16,9 +16,10 @@ A general purpose project template for golang CLI applications
 
 [![Test](https://github.com/natrongmbh/fluxup/actions/workflows/test.yml/badge.svg)](https://github.com/natrongmbh/fluxup/actions/workflows/test.yml) [![golangci-lint](https://github.com/natrongmbh/fluxup/actions/workflows/lint.yml/badge.svg)](https://github.com/natrongmbh/fluxup/actions/workflows/lint.yml) [![Go Report Card](https://goreportcard.com/badge/github.com/natrongmbh/fluxup)](https://goreportcard.com/report/github.com/natrongmbh/fluxup) [![Go Reference](https://pkg.go.dev/badge/github.com/natrongmbh/fluxup.svg)](https://pkg.go.dev/github.com/natrongmbh/fluxup) [![codecov](https://codecov.io/gh/natrongmbh/fluxup/branch/main/graph/badge.svg?token=Y5K4SID71F)](https://codecov.io/gh/natrongmbh/fluxup)
 
-This template serves as a starting point for golang commandline applications it is based on golang projects that I consider high quality and various other useful blog posts that helped me understanding golang better.
+Welcome to FluxUp! This powerful command-line interface (CLI) tool is designed to help you manage and understand the deployment structure of your application using FluxCD. With FluxUp, you can easily render clear and concise diagrams that provide insight into how your application is deployed. Whether you're a developer, a devops engineer, or simply someone interested in understanding the inner workings of your application, FluxUp has you covered. So why wait? Try FluxUp today and take control of your application's deployment structure!
 
 # Features
+
 - [goreleaser](https://goreleaser.com/) with `deb.` and `.rpm` package releasing
 - [golangci-lint](https://golangci-lint.run/) for linting and formatting
 - [Github Actions](.github/worflows) Stages (Lint, Test, Build, Release)
@@ -29,6 +30,7 @@ This template serves as a starting point for golang commandline applications it 
 - [pre-commit-hooks](https://pre-commit.com/) for formatting and validating code before committing
 
 # Project Layout
+
 * [assets/](https://pkg.go.dev/github.com/natrongmbh/fluxup/assets) => docs, images, etc
 * [cmd/](https://pkg.go.dev/github.com/natrongmbh/fluxup/cmd)  => commandline configurartions (flags, subcommands)
 * [pkg/](https://pkg.go.dev/github.com/natrongmbh/fluxup/pkg)  => packages that are okay to import for other projects
@@ -36,7 +38,8 @@ This template serves as a starting point for golang commandline applications it 
 - [`tools/`](tools/) => for automatically shipping all required dependencies when running `go get` (or `make bootstrap`) such as `golang-ci-lint` (see: https://github.com/golang/go/wiki/Modules#how-can-i-track-tool-dependencies-for-a-module)
 )
 
-# How to use this template
+# How to use FluxUp
+
 ```sh
 bash <(curl -s https://raw.githubusercontent.com/natrongmbh/fluxup/main/install.sh)
 ```
@@ -45,16 +48,15 @@ bash <(curl -s https://raw.githubusercontent.com/natrongmbh/fluxup/main/install.
 
 ```sh
 $> fluxup
-golang-cli project template demo application
-
 Usage:
   fluxup [flags]
   fluxup [command]
 
 Available Commands:
+  completion  Generate the autocompletion script for the specified shell
   example     example subcommand which adds or multiplies two given integers
   help        Help about any command
-  version     Displays d4sva binary version
+  version     Displays binary version
 
 Flags:
   -h, --help   help for fluxup
@@ -71,6 +73,7 @@ $> fluxup example 2 5 --multiply
 ```
 
 # Makefile Targets
+
 ```sh
 $> make
 bootstrap                      install build deps
@@ -88,4 +91,5 @@ test                           display test coverage
 ```
 
 # Contribute
+
 If you find issues in that setup or have some nice features / improvements, I would welcome an issue or a PR :)
